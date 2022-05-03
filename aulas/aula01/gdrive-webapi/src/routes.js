@@ -8,7 +8,7 @@ export default class Routes {
     this.io = io;
   }
   async handler(request, response) {
-    response.writeHead("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Origin", "*");
     const chosen = this[request.method.toLowerCase()] || this.defaultRoute;
     return chosen.apply(this, [request, response]);
   }
@@ -23,8 +23,8 @@ export default class Routes {
   }
 
   async post(request, response) {
-    logger.inf("post request...");
-    response.end("hello world");
+    logger.info("post request...");
+    response.end();
   }
 
   async get(request, response) {
