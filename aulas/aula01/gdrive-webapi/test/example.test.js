@@ -79,4 +79,17 @@ describe("Test suite", () => {
       expect(routes.post).toHaveBeenCalled();
     });
   });
+
+  describe("#get", () => {
+    test.skip("given method GET itshould list all files downloaded", async () => {
+      const fileStatusesMock = [
+        {
+          size: 978992,
+          birthtimeMs: 1651572599666.2188,
+          owner: "Tiago Santos",
+          file: "file.png",
+        },
+      ];
+    });
+  });
 });
